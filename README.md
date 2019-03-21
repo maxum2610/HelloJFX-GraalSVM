@@ -8,7 +8,8 @@ https://github.com/oracle/graal/issues/994
 
 and based on:
 
-https://github.com/cubuspl42/JavaFX-Graal-HelloWorld
+https://github.com/cubuspl42/JavaFX-Graal-HelloWorld 
+and
 https://github.com/johanvos/simplesvm
 
 How to:
