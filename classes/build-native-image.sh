@@ -9,27 +9,11 @@ SVMBUILD="$3"
 echo "JAVA_HOME="$JAVA_HOME
 echo "JFX_LIB="$JFX_LIB
 echo "SVMBUILD="$SVMBUILD
-
-
 OLD_JAVA_HOME=$JAVA_HOME
-#JFX_HOME='$JAVA_HOME/jre/lib'
-#only for build
-
-#TESTING export JAVA_HOME=$SVMBUILD
-
 echo 'Switching java home to:'$JAVA_HOME
-#export JAVA_HOME='/Library/Java/JavaVirtualMachines/graalvm-ce-1.0.0-rc14/Contents/Home'
-#   export JRE_HOME='/Library/Java/JavaVirtualMachines/graalvm-ce-1.0.0-rc14/Contents/Home'
-#export JFX_HOME='/Library/Java/JavaVirtualMachines/labsjdk1.8.0_192-jvmci-0.53-forJFXBuild/Contents/Home'
 
-# scenario 1
-#JFX_HOME='/Users/brunoposthuma/GRAAL_TESTS/openjavafx-macos-sdk/sdk/lib' => gives: Fatal error: java.lang.UnsupportedClassVersionError: javafx/application/Application has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
-#use with scenario 1 CLASSPATH="/Users/brunoposthuma/GRAAL_TESTS/simplesvm-master/classes/:$JFX_HOME/javafx.base.jar:$JFX_HOME/javafx.graphics.jar:$JFX_HOME/javafx.controls.jar:$JFX_HOME/javafx-swt.jar"
-
-# scenario 2
 PWD='pwd'
 CLASSPATH="classes:$JFX_LIB/ext/jfxrt.jar:$SVMBUILD/include/darwin:$SVMBUILD/bin"
-
 
 export PATH=$JAVA_HOME/bin:$JFX_LIB:$PATH
 
@@ -37,10 +21,6 @@ set -x
 $SVMBUILD/bin/native-image --server-shutdown-all
 
 echo 'JAVA_HOME='$JAVA_HOME
-
-
-
-#TODO add flags and shit from creatimage-mac copy.sh
 
 
 $SVMBUILD/bin/native-image \
